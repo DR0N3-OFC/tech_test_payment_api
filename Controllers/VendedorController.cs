@@ -14,5 +14,19 @@ namespace tech_test_payment_api.Controllers
         {
             _context = context;
         }
+
+        [HttpPost]
+        public IActionResult Criar(VendedorModel vendedor)
+        {
+            if (vendedor.IsValid())
+            {
+                _context?.Vendedores?.Add(vendedor);
+                _context?.SaveChanges();
+
+                return Ok(vendedor);
+            }
+
+            return BadRequest();
+        }
     }
 }
