@@ -27,5 +27,16 @@ namespace tech_test_payment_api.Controllers
 
             return BadRequest();
         }
+
+        [HttpGet("{id}")]
+        public IActionResult ObterPorId(int id)
+        {
+            var venda = _context?.Vendas?.Find(id);
+
+            if (venda == null)
+                return NotFound();
+
+            return Ok(venda);
+        }
     }
 }
