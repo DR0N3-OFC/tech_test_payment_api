@@ -5,7 +5,6 @@ namespace tech_test_payment_api.Models
 {
     public class VendaModel
     {
-        [JsonIgnore]
         public int Id { get; set; }
         public int VendedorId { get; set; }
         public DateTime Data { get; set; }
@@ -24,6 +23,11 @@ namespace tech_test_payment_api.Models
                 return false;
 
             return true;
+        }
+
+        public void SetStatus(EnumStatus? status)
+        {
+            Status = status;
         }
     }
 }
