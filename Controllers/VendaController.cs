@@ -32,11 +32,13 @@ namespace tech_test_payment_api.Controllers
         public IActionResult ObterPorId(int id)
         {
             var venda = _context?.Vendas?.Find(id);
+            var vendedor = _context?.Vendedores?.Where(v => venda.VendedorId == v.Id);
+            var vendaCompleta = new {venda , vendedor};
 
-            if (venda == null)
-                return NotFound();
+            if (venda != null)
+                return Ok(vendaCompleta);
 
-            return Ok(venda);
+            return NotFound();
         }
     }
 }

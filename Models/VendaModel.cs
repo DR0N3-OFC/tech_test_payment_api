@@ -7,7 +7,7 @@ namespace tech_test_payment_api.Models
     {
         [JsonIgnore]
         public int Id { get; set; }
-        public VendedorModel? Vendedor { get; set; }
+        public int VendedorId { get; set; }
         public DateTime Data { get; set; }
         public EnumStatus? Status { get; set; }
         [NotMapped]
@@ -20,7 +20,7 @@ namespace tech_test_payment_api.Models
         }
         public bool IsValid()
         {
-            if (Vendedor == null || Data == null || Status == null || Itens?.Count == 0 || Itens == null)
+            if (Data == null || Status == null || Itens?.Count == 0 || Itens == null)
                 return false;
 
             return true;
