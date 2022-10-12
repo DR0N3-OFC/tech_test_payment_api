@@ -7,9 +7,9 @@ namespace tech_test_payment_api.Controllers
     [Route("[controller]")]
     public class VendaController : ControllerBase
     {
-        private readonly VendaContext? _context;
+        private readonly EFContext? _context;
 
-        public VendaController(VendaContext context)
+        public VendaController(EFContext context)
         {
             _context = context;
         }
