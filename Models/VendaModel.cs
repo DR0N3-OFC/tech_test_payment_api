@@ -10,13 +10,11 @@ namespace tech_test_payment_api.Models
         public EnumStatus? Status { get; set; }
         [NotMapped]
         public ICollection<string>? Itens { get; set; }
-        
-        public string ListString 
+        public string ListString
         {
             get { return string.Join(",", Itens); }
             set { Itens = value.Split(',').ToList(); }
         }
-
         public bool IsValid()
         {
             if (Vendedor == null || Data == null || Status == null || Itens?.Count == 0 || Itens == null)

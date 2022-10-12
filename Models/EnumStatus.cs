@@ -4,6 +4,8 @@ namespace tech_test_payment_api.Models
 {
     public enum EnumStatus
     {
+        [Description("Aguardando Pagamento")]
+        Aguardando,
         [Description("Pagamento aprovado")]
         Aprovado,
         [Description("Enviado para a transportadora")]
