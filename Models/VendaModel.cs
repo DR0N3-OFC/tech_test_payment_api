@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace tech_test_payment_api.Models
 {
     public class VendaModel
@@ -6,7 +8,14 @@ namespace tech_test_payment_api.Models
         public VendedorModel? Vendedor { get; set; }
         public DateTime Data { get; set; }
         public EnumStatus? Status { get; set; }
-        public List<string>? Itens { get; set; }
+        [NotMapped]
+        public ICollection<string>? Itens { get; set; }
+        
+        public string ListString 
+        {
+            get { return string.Join(",", Itens); }
+            set { Itens = value.Split(',').ToList(); }
+        }
 
         public bool IsValid()
         {
