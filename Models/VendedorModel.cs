@@ -1,7 +1,10 @@
+using System.Text.Json.Serialization;
+
 namespace tech_test_payment_api.Models
 {
     public class VendedorModel
     {
+        [JsonIgnore]
         public int Id { get; set; }
         public string? Nome { get; set; }
         public string? Cpf { get; set; }

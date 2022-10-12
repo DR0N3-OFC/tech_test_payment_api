@@ -12,7 +12,7 @@ using tech_test_payment_api.Context;
 namespace tech_test_payment_api.Migrations
 {
     [DbContext(typeof(EFContext))]
-    [Migration("20221012032750_CriarTabelas")]
+    [Migration("20221012035802_CriarTabelas")]
     partial class CriarTabelas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

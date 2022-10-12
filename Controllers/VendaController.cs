@@ -21,7 +21,7 @@ namespace tech_test_payment_api.Controllers
             if (venda.IsValid()){
                 _context?.Vendas?.Add(venda);
                 _context?.SaveChanges();
-                
+
                 return Ok(venda);
             }
 
